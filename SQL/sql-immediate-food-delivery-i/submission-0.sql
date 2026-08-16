@@ -1,0 +1,7 @@
+-- Write your query below
+
+select 
+    round((
+        select count(*)*100.0 from delivery where order_date=customer_pref_delivery_date
+    )/count(*), 2) as immediate_percentage
+from delivery 
